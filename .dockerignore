@@ -1,0 +1,42 @@
+# Build outputs
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Rider / JetBrains
+.idea/
+*.iml
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment / secrets
+.env
+
+# Docker compose override (optional)
+docker-compose.override.yml
+
+# Git
+.git/
+.gitignore
+
+# HTTP scratch files
+*.http
+
+# Node (if ever added)
+node_modules/
+
+# Tests output (if added later)
+TestResults/
+
+# Temporary files
+tmp/
+temp/

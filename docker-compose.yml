@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    ports:
+      - "5000:8080"
+    depends_on:
+      - db
+    environment:
+      ConnectionStrings__DefaultConnection: >
+        Server=db;
+        Database=${DB_NAME};
+        User=sa;
+        Password=${SA_PASSWORD};
+        TrustServerCertificate=True;
+      jwt__Key: ${JWT_SECRET}
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: ${SA_PASSWORD}
+      ACCEPT_EULA: Y
+    ports:
+      - "1433:1433"
